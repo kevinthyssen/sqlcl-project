@@ -1,6 +1,9 @@
 name: Test
-run-name: ${{ github.actor }} is doing a test run 🚀
-on: [push]
+run-name: ${{ github.actor }} is doing a test run of ${{ inputs.deploy_target }} 🚀
+on:
+  push:
+    branches-ignore:
+      - main
 jobs:
   test:
     runs-on: ubuntu-latest
