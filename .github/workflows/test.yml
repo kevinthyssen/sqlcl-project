@@ -1,0 +1,16 @@
+name: Test
+run-name: ${{ github.actor }} is doing a test run 🚀
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: gvenzl/setup-oracle-free@v1
+        with:
+          app-user: test
+          app-user-password: test
+      - uses: gvenzl/setup-oracle-sqlcl@v1
+      - name: Run SQLcl
+        run: |
+          ${SQLCL_HOME}/bin/sql test/test@localhost/FREEPDB1 @./dist/install.sql
