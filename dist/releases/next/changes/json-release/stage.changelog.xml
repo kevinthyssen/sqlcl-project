@@ -3,7 +3,5 @@
                    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
-<!--CHANGES-->
-<include file="changes/base-release/stage.changelog.xml" relativeToChangelogFile="true"/>
-<include file="changes/json-release/stage.changelog.xml" relativeToChangelogFile="true"/>
+<include file="dev/tables/json_data_table.sql" relativeToChangelogFile="true"/>
 </databaseChangeLog>
